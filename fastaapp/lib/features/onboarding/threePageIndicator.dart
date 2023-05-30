@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'getStartedPage.dart';
+
 class ThreePage extends StatelessWidget {
   ThreePage({super.key});
 
@@ -16,7 +18,7 @@ class ThreePage extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Expanded(
-                flex: 5,
+                flex: 7,
                 child: PageView(
                   controller: pageIndicator,
                   children: [
@@ -52,7 +54,9 @@ class FirstPageIndicator extends StatelessWidget {
         Expanded(
             flex: 5,
             child: Center(
-              child: Placeholder(),
+              child: Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.asset("images/image2.PNG")),
             )),
         Expanded(
           flex: 3,
@@ -91,7 +95,9 @@ class SecondPageIndicator extends StatelessWidget {
         Expanded(
             flex: 5,
             child: Center(
-              child: Placeholder(),
+              child: Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.asset("images/image3.PNG")),
             )),
         Expanded(
           flex: 3,
@@ -124,13 +130,31 @@ class ThirdPageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   return Container(
+    return Container(
         child: Column(
       children: [
+        Container(
+          alignment: Alignment.topRight,
+          child: IconButton(
+            icon: Icon(Icons.arrow_forward),
+            color: Colors.white,
+            iconSize: 48,
+            onPressed: () {
+              Navigator.push<void>(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => const Getstarted(),
+                ),
+              );
+            },
+          ),
+        ),
         Expanded(
-            flex: 5,
+            flex: 4,
             child: Center(
-              child: Placeholder(),
+              child: Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.asset("images/image4.PNG")),
             )),
         Expanded(
           flex: 3,

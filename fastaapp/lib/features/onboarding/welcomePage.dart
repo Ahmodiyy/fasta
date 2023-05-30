@@ -1,21 +1,21 @@
-import 'package:fastaapp/threePageIndicator.dart';
+import 'package:fastaapp/features/onboarding/threePageIndicator.dart';
 import 'package:flutter/material.dart';
 
+void main() => runApp( Welcompage());
 
 class Welcompage extends StatelessWidget {
-  const Welcompage({super.key});
+   Welcompage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    
-  void threePageindicator(){
+      void threePageindicator(){
      Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => ThreePage()),
     );
   }
-
-    return Scaffold(
+  
+   return Scaffold(
       body: SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -26,36 +26,7 @@ class Welcompage extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: SizedBox(
                       width: double.infinity,
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            "images/1.png",
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(top: 120),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Image.asset(
-                                    "images/2.png",
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Image.asset(
-                                    "images/2.png",
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                      child: Image.asset("images/image1.PNG"),
                     ))),
               Expanded(
                   child: Center(

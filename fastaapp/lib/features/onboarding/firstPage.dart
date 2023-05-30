@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:fastaapp/welcomePage.dart';
+import 'package:fastaapp/features/onboarding/welcomePage.dart';
 import 'package:flutter/material.dart';
 // import 'package:splashscreen/splashscreen.dart';
 
