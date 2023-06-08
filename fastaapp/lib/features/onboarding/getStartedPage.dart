@@ -1,3 +1,4 @@
+import 'package:fastaapp/features/GetStarted/sendPackagePage.dart';
 import 'package:flutter/material.dart';
 
 class Getstarted extends StatelessWidget {
@@ -20,7 +21,8 @@ class Getstarted extends StatelessWidget {
                         alignment: Alignment.bottomCenter,
                         child: SizedBox(
                           width: double.infinity,
-                          child: Image.asset("images/image1.PNG"),
+                          child:
+                              Image.asset("images/onboardingImages/image1.PNG"),
                         ))),
                 Expanded(
                     flex: 6,
@@ -44,7 +46,15 @@ class Getstarted extends StatelessWidget {
                                         BorderRadius.all(Radius.circular(10)),
                                     color: Color.fromARGB(255, 253, 253, 253)),
                                 child: MaterialButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push<void>(
+                                      context,
+                                      MaterialPageRoute<void>(
+                                        builder: (BuildContext context) =>
+                                            const SendpackagesPage(),
+                                      ),
+                                    );
+                                  },
                                   child: Padding(
                                     padding: const EdgeInsets.all(10),
                                     child: Text('Get Started',

@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fastaapp/features/onboarding/welcomePage.dart';
 import 'package:flutter/material.dart';
 // import 'package:splashscreen/splashscreen.dart';
@@ -16,7 +16,7 @@ class _FirstviewState extends State<Firstview> {
 
   // start the timer
   void initState() {
-      _timer = Timer(Duration(seconds: 5), navigateTonextPage);
+      _timer = Timer(Duration(seconds: 10), navigateTonextPage);
 
   }
 
@@ -51,8 +51,7 @@ class _FirstviewState extends State<Firstview> {
               alignment: Alignment.bottomCenter,
               child: Stack(
                 children: [
-                  // Center(child: CircularProgressIndicator()),
-                  Image.asset("images/Subtract.png"),
+                  Image.asset("images/onboardingImages/Subtract.png"),
 
                 ],
               ),
@@ -65,7 +64,7 @@ class _FirstviewState extends State<Firstview> {
                       child: Stack(
                         children: [
                           Image.asset(
-                            "images/1.png",
+                            "images/onboardingImages/1.png",
                             fit: BoxFit.cover,
                             width: double.infinity,
                           ),
@@ -75,14 +74,14 @@ class _FirstviewState extends State<Firstview> {
                               children: [
                                 Expanded(
                                   child: Image.asset(
-                                    "images/2.png",
+                                    "images/onboardingImages/2.png",
                                     fit: BoxFit.cover,
                                     width: double.infinity,
                                   ),
                                 ),
                                 Expanded(
                                   child: Image.asset(
-                                    "images/2.png",
+                                    "images/onboardingImages/2.png",
                                     fit: BoxFit.cover,
                                     width: double.infinity,
                                   ),

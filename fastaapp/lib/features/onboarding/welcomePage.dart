@@ -26,7 +26,7 @@ class Welcompage extends StatelessWidget {
                     alignment: Alignment.bottomCenter,
                     child: SizedBox(
                       width: double.infinity,
-                      child: Image.asset("images/image1.PNG"),
+                      child: Image.asset("images/onboardingImages/image1.PNG"),
                     ))),
               Expanded(
                   child: Center(
