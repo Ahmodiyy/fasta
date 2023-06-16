@@ -1,5 +1,6 @@
 import 'package:fastaapp/features/GetStarted/sendPackagePage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Getstarted extends StatelessWidget {
   const Getstarted({super.key});
@@ -35,7 +36,7 @@ class Getstarted extends StatelessWidget {
                               Text(
                                 'Ready To Get Started As A Customer!',
                                 style: TextStyle(
-                                    fontSize: 40,
+                                    fontSize: ScreenUtil().setSp(40),
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -59,7 +60,7 @@ class Getstarted extends StatelessWidget {
                                     padding: const EdgeInsets.all(10),
                                     child: Text('Get Started',
                                         style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: ScreenUtil().setSp(16),
                                             color:
                                                 Color.fromARGB(255, 28, 55, 56),
                                             fontWeight: FontWeight.w700)),

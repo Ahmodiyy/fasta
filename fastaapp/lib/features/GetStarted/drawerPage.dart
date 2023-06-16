@@ -1,5 +1,6 @@
 import 'package:fastaapp/features/GetStarted/deliveryHistory.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Drawer_page extends StatelessWidget {
   const Drawer_page({super.key});
@@ -36,7 +37,7 @@ class Drawer_page extends StatelessWidget {
               child: Container(
                 color: const Color.fromARGB(255, 255, 255, 255),
                 child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding:  EdgeInsets.all(15.w.h),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -78,8 +79,8 @@ class Drawer_page extends StatelessWidget {
                                 ),
                               );
                             },
-                            child: const Padding(
-                              padding: EdgeInsets.only(top: 25, bottom: 25),
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 15.w.h, bottom: 15.w.h),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
@@ -92,7 +93,7 @@ class Drawer_page extends StatelessWidget {
                                     Text(
                                       'Delivery History',
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 25),
+                                          color: Colors.white, fontSize: ScreenUtil().setSp(25)),
                                     )
                                   ]),
                             ),

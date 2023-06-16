@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fastaapp/features/onboarding/welcomePage.dart';
 import 'package:flutter/material.dart';
 // import 'package:splashscreen/splashscreen.dart';
@@ -16,8 +15,7 @@ class _FirstviewState extends State<Firstview> {
 
   // start the timer
   void initState() {
-      _timer = Timer(Duration(seconds: 10), navigateTonextPage);
-
+    _timer = Timer(Duration(seconds: 10), navigateTonextPage);
   }
 
   // I override the dispose method to cancel the timer
@@ -29,11 +27,9 @@ class _FirstviewState extends State<Firstview> {
 
   //method to navigate to the second page
   void navigateTonextPage() {
-
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Welcompage()),
-
     );
   }
 
@@ -45,54 +41,57 @@ class _FirstviewState extends State<Firstview> {
         height: double.infinity,
         child: Container(
           color: Color.fromARGB(255, 28, 55, 56),
-          child: Column(children: [
-            Expanded(
+          child: Column(
+            children: [
+              Expanded(
+                  child: Container(
+                alignment: Alignment.bottomCenter,
+                child: Stack(
+                  children: [
+                    Image.asset("images/onboardingImages/Subtract.png"),
+                  ],
+                ),
+              )),
+              Expanded(
                 child: Container(
-              alignment: Alignment.bottomCenter,
-              child: Stack(
-                children: [
-                  Image.asset("images/onboardingImages/Subtract.png"),
-
-                ],
-              ),
-            )),
-            Expanded(
-                child: Container(
-                    alignment: Alignment.bottomCenter,
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            "images/onboardingImages/1.png",
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(top: 120),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Image.asset(
-                                    "images/onboardingImages/2.png",
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ),
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Stack(
+                      children: [
+                        Image.asset(
+                          "images/onboardingImages/1.png",
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(top: 120),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Image.asset(
+                                  "images/onboardingImages/2.png",
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
                                 ),
-                                Expanded(
-                                  child: Image.asset(
-                                    "images/onboardingImages/2.png",
-                                    fit: BoxFit.cover,
-                                    width: double.infinity,
-                                  ),
+                              ),
+                              Expanded(
+                                child: Image.asset(
+                                  "images/onboardingImages/2.png",
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    )))
-          ]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

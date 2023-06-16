@@ -1,5 +1,6 @@
 import 'package:fastaapp/features/onboarding/threePageIndicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() => runApp( Welcompage());
 
@@ -35,7 +36,7 @@ class Welcompage extends StatelessWidget {
                   child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                      children: [
                     Text('Hi, welcome onboard!',style: TextStyle(
-                      color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),
+                      color: Colors.white,fontSize: ScreenUtil().setSp(30),fontWeight: FontWeight.bold)),
                     Align(alignment: Alignment.bottomCenter,
                     child: Column(children: [
                       Container(width: double.infinity,

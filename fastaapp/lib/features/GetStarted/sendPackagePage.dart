@@ -1,5 +1,7 @@
+import 'package:fastaapp/features/GetStarted/PackageDetails/packageScreen.dart';
 import 'package:fastaapp/features/GetStarted/drawerPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SendpackagesPage extends StatelessWidget {
   const SendpackagesPage({super.key});
@@ -29,7 +31,6 @@ class SendpackagesPage extends StatelessWidget {
         ),
         body: SizedBox(
           width: double.infinity,
-          height: double.infinity,
           child: Column(
             children: [
               Expanded(
@@ -44,13 +45,14 @@ class SendpackagesPage extends StatelessWidget {
                             Text('Send Packages With Ziklogistics',
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 28, 55, 56),
-                                    fontSize: 40,
+                                    fontSize: 30.sp,
+                                    
                                     fontWeight: FontWeight.bold)),
                             Text(
                                 'Get it delivered in the time it takes to drive there!',
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 28, 55, 56),
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.w500))
                           ]),
                     ),
@@ -59,41 +61,55 @@ class SendpackagesPage extends StatelessWidget {
                   flex: 8,
                   child: Container(
                     color: Color.fromARGB(255, 28, 55, 56),
-                    child: Column(children: [
-                      Image.asset(
-                        "images/getStartedImages/image1.PNG",
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(35),
-                        child: Container(
+                    // Wrap the Column with a SingleChildScrollView widget
+                    child: SingleChildScrollView(
+                      child: Column(children: [
+                        Image.asset(
+                          "images/getStartedImages/image1.PNG",
+                          fit: BoxFit.cover,
                           width: double.infinity,
-                          decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                              color: Color.fromARGB(255, 253, 253, 253)),
-                          child: MaterialButton(
-                            onPressed: () {},
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Text('Send A Package',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: Color.fromARGB(255, 28, 55, 56),
-                                      fontWeight: FontWeight.w700)),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(35),
+                          child: Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                color: Color.fromARGB(255, 253, 253, 253)),
+                            child: MaterialButton(
+                              onPressed: () {
+                                Navigator.push<void>(
+                                  context,
+                                  MaterialPageRoute<void>(
+                                    builder: (BuildContext context) =>
+                                        const Packagedetails(),
+                                  ),
+                                );
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Text('Send A Package',
+                                    style: TextStyle(
+                                        fontSize: 20.sp,
+                                        color:
+                                            Color.fromARGB(255, 28, 55, 56),
+                                        fontWeight: FontWeight.w700)),
+                              ),
                             ),
                           ),
-                        ),
-                      )
-                    ]),
-                  ))
+                        )
+                      ]),
+                    ),
+                  )),
             ],
           ),
         ));
   }
 }
 
+
+// page animation
 Route pageAnimation() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => Drawer_page(),
