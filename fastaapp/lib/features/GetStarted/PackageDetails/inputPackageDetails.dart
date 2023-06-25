@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const double kPadding = 20.0;
@@ -14,6 +15,7 @@ Widget buildTextField(String label, String hint) {
       Text(label, style: myLabelStyle),
       TextField(
         // controller: TextEditingController(),
+         keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
           prefixIcon: myIcon,
           border: UnderlineInputBorder(),

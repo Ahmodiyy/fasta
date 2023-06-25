@@ -51,11 +51,22 @@ class _ScheduleTimeState extends State<ScheduleTime> {
                           children: [
                             Icon(Icons.access_time_filled,
                                 color: Colors.white, size: 25.sp),
-                            Text('Select A Time & Date',
-                                style: TextStyle(
-                                  fontSize: 15.sp,
-                                  color: Colors.white,
-                                )),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push<void>(
+                                  context,
+                                  MaterialPageRoute<void>(
+                                    builder: (BuildContext context) =>
+                                        setDateandTime(),
+                                  ),
+                                );
+                              },
+                              child: Text('Select A Time & Date',
+                                  style: TextStyle(
+                                    fontSize: 15.sp,
+                                    color: Colors.white,
+                                  )),
+                            ),
                             PopupMenuButton(
                               itemBuilder: (context) => [
                                 PopupMenuItem(

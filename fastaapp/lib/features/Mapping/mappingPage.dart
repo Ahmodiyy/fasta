@@ -1,3 +1,6 @@
+import 'package:fastaapp/features/Dialogs/loadPaymentPage.dart';
+import 'package:fastaapp/features/GetStarted/PackageDetails/packageScreen.dart';
+import 'package:fastaapp/features/Mapping/map.dart';
 import 'package:fastaapp/features/Provider/passDateandTime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,9 +16,10 @@ class MappingPage extends StatelessWidget {
           body: Container(
         color: Colors.white,
         width: double.infinity,
+        height: double.infinity,
         child: Stack(children: [
           Container(
-            color: Colors.red,
+            // color: Colors.red,
             child: Stack(children: [
               Align(
                   alignment: Alignment.topLeft,
@@ -23,9 +27,15 @@ class MappingPage extends StatelessWidget {
                     padding: EdgeInsets.all(10.w.h),
                     child: IconButton(
                       icon: Icon(Icons.arrow_circle_left_outlined,
-                          color: Color.fromARGB(255, 28, 55, 56), size: 30.w.h),
+                          color: Color.fromARGB(255, 28, 55, 56), size: 40.w.h),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.push<void>(
+                          context,
+                          MaterialPageRoute<void>(
+                            builder: (BuildContext context) =>
+                                const Packagedetails(),
+                          ),
+                        );
                       },
                     ),
                   )),
@@ -33,7 +43,7 @@ class MappingPage extends StatelessWidget {
             ]),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 400.h),
+            padding: EdgeInsets.only(top: 300.h),
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -104,7 +114,7 @@ class MappingPage extends StatelessWidget {
                                   child: Card(
                                     color: Color.fromARGB(255, 28, 55, 56),
                                     child: ListTile(
-                                       trailing: Icon(Icons.access_time_filled,
+                                      leading: Icon(Icons.access_time_filled,
                                           color: Colors.white, size: 30.w.h),
                                       title: Consumer<DateAndTime>(
                                         builder: (context, model, child) {
@@ -118,8 +128,8 @@ class MappingPage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                ),  )
-                            
+                                ),
+                              )
                             ],
                           ),
                         ),
@@ -132,7 +142,14 @@ class MappingPage extends StatelessWidget {
                                 Colors.white,
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return LoadPaymentPAge();
+                                },
+                              );
+                            },
                             child: Padding(
                               padding: EdgeInsets.all(3.w.h),
                               child: Text('Confirm',

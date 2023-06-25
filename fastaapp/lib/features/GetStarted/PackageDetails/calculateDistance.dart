@@ -11,6 +11,9 @@ class DistanceCalculation extends StatelessWidget {
         padding: EdgeInsets.only(top: 20),
         child: Card(
           color: Colors.white,
+          shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(15.0), // set border radius here
+  ),
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: Row(children: [

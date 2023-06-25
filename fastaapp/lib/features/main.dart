@@ -1,8 +1,9 @@
 import 'package:fastaapp/features/Provider/passDateandTime.dart';
+import 'package:fastaapp/features/Provider/setYeah.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'onboarding/firstPage.dart';
 import 'package:provider/provider.dart';
+import 'onboarding/firstPage.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,9 +16,22 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
+      
       builder: (context, child) {
-        return ChangeNotifierProvider(
-          create: (context) => DateAndTime(),
+        return MultiProvider(
+          providers: [
+            // Create DateAndTime provider
+            ChangeNotifierProvider(
+              create: (context) => DateAndTime(),
+            ),
+            // Create MonthProvider provider
+            ChangeNotifierProvider(
+              create: (context) => MonthProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => YearProvider(),
+            ),
+          ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             home: child,
