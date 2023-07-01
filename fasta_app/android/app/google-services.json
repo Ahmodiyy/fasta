@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "882147279928",
+    "project_id": "fastaapp-3e39a",
+    "storage_bucket": "fastaapp-3e39a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882147279928:android:2dce37476fbb802e4c12cd",
+        "android_client_info": {
+          "package_name": "com.example.fasta_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882147279928-67j9vdmk2h3fcfrmh3jncgh3glb1qjij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYfFqlPfDs8sHiFjnv47lwYuHJS0e6DEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882147279928-67j9vdmk2h3fcfrmh3jncgh3glb1qjij.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882147279928-v9arcan7mspbsfnoafjahugr221mu8sq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fastaapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
