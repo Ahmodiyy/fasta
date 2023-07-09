@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -52,11 +43,41 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCy_DP0SQ-RIBkahNtSh-j0boANlEUV6bg',
+    appId: '1:882147279928:web:12c2ec2ed43acf274c12cd',
+    messagingSenderId: '882147279928',
+    projectId: 'fastaapp-3e39a',
+    authDomain: 'fastaapp-3e39a.firebaseapp.com',
+    storageBucket: 'fastaapp-3e39a.appspot.com',
+    measurementId: 'G-QE3T9T6R4L',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAYfFqlPfDs8sHiFjnv47lwYuHJS0e6DEw',
-    appId: '1:882147279928:android:2dce37476fbb802e4c12cd',
+    appId: '1:882147279928:android:a90da00e82e537874c12cd',
     messagingSenderId: '882147279928',
     projectId: 'fastaapp-3e39a',
     storageBucket: 'fastaapp-3e39a.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAgbqVPQMnLGYJ9aQM0qRT62ImhUBYw_Aw',
+    appId: '1:882147279928:ios:62e71739153014bb4c12cd',
+    messagingSenderId: '882147279928',
+    projectId: 'fastaapp-3e39a',
+    storageBucket: 'fastaapp-3e39a.appspot.com',
+    iosClientId: '882147279928-lpedq8c9use9toflua07c2mlt3ji424i.apps.googleusercontent.com',
+    iosBundleId: 'com.example.fastaApp',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyAgbqVPQMnLGYJ9aQM0qRT62ImhUBYw_Aw',
+    appId: '1:882147279928:ios:3fbd817f5169a09a4c12cd',
+    messagingSenderId: '882147279928',
+    projectId: 'fastaapp-3e39a',
+    storageBucket: 'fastaapp-3e39a.appspot.com',
+    iosClientId: '882147279928-egd96faord514f2l8ur02j6juqc16fag.apps.googleusercontent.com',
+    iosBundleId: 'com.example.fastaApp.RunnerTests',
   );
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'getStartedPage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:jumping_dot/jumping_dot.dart';
+// import 'package:jumping_dot/jumping_dot.dart';
 
 class ThreePage extends StatelessWidget {
   ThreePage({super.key});
@@ -60,7 +60,7 @@ class FirstPageIndicator extends StatelessWidget {
               child: Container(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: EdgeInsets.all(40.sp),
                     child: Image.asset("images/onboardingImages/image2.PNG"),
                   )),
             )),
@@ -106,7 +106,7 @@ class SecondPageIndicator extends StatelessWidget {
               child: Container(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: const EdgeInsets.all(30),
+                    padding: EdgeInsets.all(40.sp),
                     child: Image.asset("images/onboardingImages/image3.PNG"),
                   )),
             )),
@@ -178,7 +178,7 @@ class ThirdPageIndicator extends StatelessWidget {
                   child: Container(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: const EdgeInsets.all(20),
+                        padding: EdgeInsets.all(10.sp),
                         child:
                             Image.asset("images/onboardingImages/image4.PNG"),
                       )),

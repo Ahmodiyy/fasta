@@ -87,13 +87,6 @@ class CardValidateSuccessfull extends StatelessWidget {
                   minWidth: double.infinity,
                   onPressed: () {
                     Navigator.pop(context);
-                    // Navigator.push<void>(
-                    //   context,
-                    //   MaterialPageRoute<void>(
-                    //     builder: (BuildContext context) =>
-                    //         const PaymentCardDetails(),
-                    //   ),
-                    // );
                   },
                   child: Padding(
                     padding: EdgeInsets.all(6.w.h),

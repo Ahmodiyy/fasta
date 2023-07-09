@@ -1,15 +1,17 @@
+import 'package:fasta_app/features/Provider/OTP/getPhoneNunberandEmail.dart';
+import 'package:fasta_app/features/Provider/OTP/username.dart';
 import 'package:fasta_app/features/Provider/checkBox.dart';
 import 'package:fasta_app/features/Provider/passDateandTime.dart';
 import 'package:fasta_app/features/Provider/setYeah.dart';
 import 'package:fasta_app/features/onboarding/firstPage.dart';
+import 'package:firebase_phone_auth_handler/firebase_phone_auth_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +21,8 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(MyApp());
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -44,6 +48,12 @@ class MyApp extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (context) => CheckBoxModel(),
+            ),
+             ChangeNotifierProvider(
+              create: (context) => PhoneNumber(),
+            ),
+             ChangeNotifierProvider(
+              create: (context) => UserName(),
             ),
           ],
           child: MaterialApp(

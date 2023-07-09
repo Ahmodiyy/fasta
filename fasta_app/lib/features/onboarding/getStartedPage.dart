@@ -1,6 +1,7 @@
 
 
 import 'package:fasta_app/features/OTP/otpNumber.dart';
+import 'package:fasta_app/features/OTP/otpcode.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,6 +55,7 @@ class Getstarted extends StatelessWidget {
                                       context,
                                       MaterialPageRoute<void>(
                                         builder: (BuildContext context) =>
+                                      //  const OTPCODE(),
                                             const OtpPhoneNumber(),
                                       ),
                                     );
