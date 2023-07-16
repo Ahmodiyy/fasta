@@ -5,7 +5,7 @@ class UserName extends ChangeNotifier {
 
   String get user_Name => userName;
 
-  void updatePhoneNumberandemail(String newuserName) {
+  void updateUserName(String newuserName) {
     userName = newuserName;
     notifyListeners();
   }

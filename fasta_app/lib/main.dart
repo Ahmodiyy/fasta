@@ -4,7 +4,6 @@ import 'package:fasta_app/features/Provider/checkBox.dart';
 import 'package:fasta_app/features/Provider/passDateandTime.dart';
 import 'package:fasta_app/features/Provider/setYeah.dart';
 import 'package:fasta_app/features/onboarding/firstPage.dart';
-import 'package:firebase_phone_auth_handler/firebase_phone_auth_handler.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';

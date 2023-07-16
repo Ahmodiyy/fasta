@@ -60,7 +60,7 @@ class FirstPageIndicator extends StatelessWidget {
               child: Container(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: EdgeInsets.all(40.sp),
+                    padding: EdgeInsets.all(20.sp),
                     child: Image.asset("images/onboardingImages/image2.PNG"),
                   )),
             )),
@@ -106,7 +106,7 @@ class SecondPageIndicator extends StatelessWidget {
               child: Container(
                   alignment: Alignment.bottomCenter,
                   child: Padding(
-                    padding: EdgeInsets.all(40.sp),
+                    padding: EdgeInsets.all(20.sp),
                     child: Image.asset("images/onboardingImages/image3.PNG"),
                   )),
             )),
@@ -178,7 +178,7 @@ class ThirdPageIndicator extends StatelessWidget {
                   child: Container(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: EdgeInsets.all(10.sp),
+                        padding: EdgeInsets.all(20.sp),
                         child:
                             Image.asset("images/onboardingImages/image4.PNG"),
                       )),

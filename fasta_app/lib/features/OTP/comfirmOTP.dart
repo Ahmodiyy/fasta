@@ -2,7 +2,6 @@ import 'package:email_otp/email_otp.dart';
 import 'package:fasta_app/features/Dialogs/OTPAnimation/animation1.dart';
 import 'package:fasta_app/features/OTP/otpNumber.dart';
 import 'package:fasta_app/features/OTP/otpcode.dart';
-import 'package:fasta_app/features/OTP/username.dart';
 import 'package:fasta_app/features/Provider/OTP/getPhoneNunberandEmail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,9 +18,9 @@ class Verifybutton extends StatefulWidget {
 class _nameState extends State<Verifybutton> {
   String otpController = ''; // Replace with the actual OTP value
   TextEditingController otp1Controller = TextEditingController();
-  TextEditingController otp2Controller = TextEditingController();
-  TextEditingController otp3Controller = TextEditingController();
-  TextEditingController otp4Controller = TextEditingController();
+  // TextEditingController otp2Controller = TextEditingController();
+  // TextEditingController otp3Controller = TextEditingController();
+  // TextEditingController otp4Controller = TextEditingController();
 
   void verifyOTP() async {
     if (await widget.myauth.verifyOTP(otp: otp1Controller.text
@@ -32,7 +31,8 @@ class _nameState extends State<Verifybutton> {
         true) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("OTP is verified"),
+          backgroundColor: Colors.white,
+          content: Text("OTP is verified",style: TextStyle(color: Colors.black)),
         ),
       );
       showDialog(
@@ -41,15 +41,10 @@ class _nameState extends State<Verifybutton> {
           return Loadaut1();
         },
       );
-      // Navigator.push<void>(
-      //   context,
-      //   MaterialPageRoute<void>(
-      //     builder: (BuildContext context) => const UserForm(),
-      //   ),
-      // );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text("Invalid OTP"),
+        backgroundColor: Colors.white,
+        content: Text("Invalid OTP",style: TextStyle(color: Colors.black)),
       ));
     }
   }

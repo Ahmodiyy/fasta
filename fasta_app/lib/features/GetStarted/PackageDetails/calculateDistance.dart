@@ -33,7 +33,7 @@ class DistanceCalculation extends StatelessWidget {
                         style: TextStyle(fontSize: 20.sp),
                         children: [
                           TextSpan(
-                              text: '\n jjj',
+                              text: '\n 15.2 km',
                               style: TextStyle(fontSize: 15.sp))
                         ])),
                   ),
@@ -43,7 +43,7 @@ class DistanceCalculation extends StatelessWidget {
                         style: TextStyle(fontSize: 20.sp),
                         children: [
                           TextSpan(
-                              text: '\n jjj',
+                              text: '\n 90 Min',
                               style: TextStyle(fontSize: 15.sp))
                         ])),
                   ),
@@ -53,7 +53,7 @@ class DistanceCalculation extends StatelessWidget {
                         style: TextStyle(fontSize: 20.sp),
                         children: [
                           TextSpan(
-                              text: '\n jjj',
+                              text: '\n\u20A6 20,500.00',
                               style: TextStyle(fontSize: 15.sp))
                         ])),
                   )

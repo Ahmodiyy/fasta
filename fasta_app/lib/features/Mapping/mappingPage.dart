@@ -1,6 +1,7 @@
 
 import 'package:fasta_app/features/Dialogs/loadPaymentPage.dart';
 import 'package:fasta_app/features/GetStarted/PackageDetails/packageScreen.dart';
+import 'package:fasta_app/features/Mapping/map.dart';
 import 'package:fasta_app/features/Provider/passDateandTime.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,6 +42,7 @@ class MappingPage extends StatelessWidget {
                       },
                     ),
                   )),
+                  MapScreen (),
               Placeholder()
             ]),
           ),

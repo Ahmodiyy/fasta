@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpScreen extends StatelessWidget {
   OtpScreen({Key? key, required this.otpController}) : super(key: key);
   final TextEditingController otpController;
-  // var codeInput;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: otpController,
       keyboardType: TextInputType.number,
-      // style: Theme.of(context).textTheme.headlineMedium,
       textAlign: TextAlign.start,
       inputFormatters: [
         LengthLimitingTextInputFormatter(4),
