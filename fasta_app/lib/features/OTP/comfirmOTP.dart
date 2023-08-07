@@ -18,21 +18,22 @@ class Verifybutton extends StatefulWidget {
 class _nameState extends State<Verifybutton> {
   String otpController = ''; // Replace with the actual OTP value
   TextEditingController otp1Controller = TextEditingController();
-  // TextEditingController otp2Controller = TextEditingController();
-  // TextEditingController otp3Controller = TextEditingController();
-  // TextEditingController otp4Controller = TextEditingController();
+  TextEditingController otp2Controller = TextEditingController();
+  TextEditingController otp3Controller = TextEditingController();
+  TextEditingController otp4Controller = TextEditingController();
 
   void verifyOTP() async {
-    if (await widget.myauth.verifyOTP(otp: otp1Controller.text
-            //  + otp2Controller.text +
-            //     otp3Controller.text +
-            //     otp4Controller.text
-            ) ==
+    if (await widget.myauth.verifyOTP(
+            otp: otp1Controller.text +
+                otp2Controller.text +
+                otp3Controller.text +
+                otp4Controller.text) ==
         true) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           backgroundColor: Colors.white,
-          content: Text("OTP is verified",style: TextStyle(color: Colors.black)),
+          content:
+              Text("OTP is verified", style: TextStyle(color: Colors.black)),
         ),
       );
       showDialog(
@@ -44,7 +45,7 @@ class _nameState extends State<Verifybutton> {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         backgroundColor: Colors.white,
-        content: Text("Invalid OTP",style: TextStyle(color: Colors.black)),
+        content: Text("Invalid OTP", style: TextStyle(color: Colors.black)),
       ));
     }
   }
@@ -86,23 +87,12 @@ class _nameState extends State<Verifybutton> {
                   Flexible(
                     child: OtpScreen(
                       otpController: otp1Controller,
+                      otp1Controller: otp1Controller,
+                      otp2Controller: otp2Controller,
+                      otp3Controller: otp3Controller,
+                      otp4Controller: otp4Controller,
                     ),
                   ),
-                  //  Flexible(
-                  //   child: OtpScreen(
-                  //         otpController: otp2Controller,
-                  //       ),
-                  // ),
-                  //  Flexible(
-                  //   child: OtpScreen(
-                  //         otpController: otp3Controller,
-                  //       ),
-                  // ),
-                  //  Flexible(
-                  //   child: OtpScreen(
-                  //         otpController: otp4Controller,
-                  //       ),
-                  // ),
                 ],
               ),
               SizedBox(height: 50.h),

@@ -14,6 +14,7 @@ class OtpPhoneNumber extends StatefulWidget {
 
 class _OtpPhoneNumberState extends State<OtpPhoneNumber> {
   FocusNode focusNode = FocusNode();
+  String loading = "Next";
 
   var getPhoneNumber = TextEditingController();
 
@@ -28,6 +29,38 @@ class _OtpPhoneNumberState extends State<OtpPhoneNumber> {
   void _updatePhoneNumber() {
     Provider.of<PhoneNumber>(context, listen: false)
         .updatePhoneNumberandemail(getPhoneNumber.text, email.text, otp);
+  }
+
+  sendMaile() async {
+    loading = "Loading...";
+    myauth.setConfig(
+        appName: "Email OTP",
+        userEmail: email.text,
+        otpLength: 4,
+        otpType: OTPType.digitsOnly);
+    if (await myauth.sendOTP() == true) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.white,
+          content:
+              Text("OTP has been sent", style: TextStyle(color: Colors.black)),
+        ),
+      );
+      Navigator.push<void>(
+        context,
+        MaterialPageRoute<void>(
+          builder: (BuildContext context) => Verifybutton(myauth: myauth),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        backgroundColor: Colors.white,
+        content: Text("Oops, OTP send failed",
+            style: TextStyle(color: Colors.black)),
+      ));
+    }
+    generateAndDisplayOTP();
+    _updatePhoneNumber();
   }
 
   @override
@@ -76,6 +109,7 @@ class _OtpPhoneNumberState extends State<OtpPhoneNumber> {
                   controller: email,
                   decoration: InputDecoration(
                       hintText: "User Email",
+                      contentPadding: EdgeInsets.all(10.sp),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white)),
                       enabledBorder: UnderlineInputBorder(
@@ -86,54 +120,23 @@ class _OtpPhoneNumberState extends State<OtpPhoneNumber> {
             SizedBox(
               height: 40.h,
             ),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(6)),
-              child: TextButton(
-                    onPressed: () async {
-                      myauth.setConfig(
-                          appName: "Email OTP",
-                          userEmail: email.text,
-                          otpLength: 4,
-                          otpType: OTPType.digitsOnly);
-                      if (await myauth.sendOTP() == true) {
-                        // showDialog(
-                        //   context: context,
-                        //   builder: (context) {
-                        //     return Loadaut1();
-                        //   },
-                        // );
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            backgroundColor: Colors.white,
-                            content: Text("OTP has been sent",style: TextStyle(color: Colors.black)),
-                          ),
-                        );
-                        Navigator.push<void>(
-                          context,
-                          MaterialPageRoute<void>(
-                            builder: (BuildContext context) => Verifybutton(myauth: myauth),
-                          ),
-                        );
-                      } else {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(const SnackBar(
-                              backgroundColor: Colors.white,
-                          content: Text("Oops, OTP send failed",style: TextStyle(color: Colors.black)),
-                        ));
-                      }
-                      generateAndDisplayOTP();
-                      _updatePhoneNumber();
-                    },
-                  child: Padding(
-                    padding: EdgeInsets.all(5.sp),
-                    child: Text('Next',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 28, 55, 56),
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w600)),
-                  )),
+            GestureDetector(
+              onTap: sendMaile,
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                child: TextButton(
+                    onPressed: sendMaile,
+                    child: Padding(
+                      padding: EdgeInsets.all(5.sp),
+                      child: Text( loading,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 28, 55, 56),
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.w600)),
+                    )),
+              ),
             ),
             SizedBox(
               height: 30.h,

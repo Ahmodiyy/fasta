@@ -3,8 +3,6 @@ import 'package:fasta_app/features/onboarding/threePageIndicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() => runApp( Welcompage());
-
 class Welcompage extends StatelessWidget {
    Welcompage({super.key});
 
